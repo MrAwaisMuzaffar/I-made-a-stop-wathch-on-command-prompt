@@ -1,0 +1,41 @@
+#include <iostream>
+#include<Windows.h>
+#include<cstdlib>
+
+using namespace std;
+
+
+int main()
+{
+
+	double  minutes, seconds=0;
+	float time;
+
+
+	do {
+
+		cout << "Enter minutes :";
+		cin >> minutes;
+
+	} while (minutes > 59);
+
+	time = ((minutes != 0) ? (minutes * 60) : 0);
+
+	time += seconds;
+	for (int i = time; i > 0; i--) {
+		system("Cls");
+		cout << "Time remaining is 0: " << minutes << " : " << seconds << " : \n";
+		minutes = (i % 60 == 0) ? minutes - 1 : minutes;
+		seconds = (seconds == 0) ? 59 : --seconds;
+		system("TIMEOUT 1"); 
+
+	}
+	system("Cls");
+	cout << "********************\nTimer ended!\a\n Listed for" << endl;
+	cout << time << " seconds" << endl;
+
+	system("pause");
+
+}
+
+
